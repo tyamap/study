@@ -1,9 +1,14 @@
-A = 1
-B = 2
+import sys
+args = sys.argv
 
-Work = A
-A = B
-B = Work
+print(args)
+print(args[1]) 
+print(args[2])
 
-print (A)
-print (B)
+Work = args[1]
+args[1] = args[2]
+args[2] = Work
+
+print ("=====swapped=====")
+print (args[1])
+print (args[2])
