@@ -1,4 +1,6 @@
 class Helo
+    attr_accessor:name
+
     def initialize(name="noname")
         @name = name
     end
@@ -8,4 +10,7 @@ class Helo
 end
 
 obj = Helo.new("Hanako")
+obj.say
+
+obj.name ="taro"
 obj.say
