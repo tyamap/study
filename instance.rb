@@ -1,4 +1,11 @@
 class Helo
+    # def name
+    #     return @name
+    # end
+
+    # def name=(str)
+    #     @name = str
+    # end
     attr_accessor:name
 
     def initialize(name="noname")
