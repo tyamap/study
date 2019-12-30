@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default class Layout extends React.Component {
 	constructor() {
@@ -12,6 +14,7 @@ export default class Layout extends React.Component {
 		let b = this.b;
 		return (
 			<div>
+				<Header />
 				<h1>Welcome {this.name}!</h1>
 				<h2>It works!</h2>
 				<p>
@@ -21,6 +24,7 @@ export default class Layout extends React.Component {
 				function: {this.get_sum(a,b)}<br/>
 				anonymous: {((a,b) => {return a + b;})(a,b)}
 				</p>
+				<Footer />
 			</div>
 		);
 	}
