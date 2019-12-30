@@ -11,13 +11,12 @@ export default class Layout extends React.Component {
 	}
 
 	render() {
-		// 複数のコンポーネントを並べる際は、配列を利用することもできる。
-		let headers = [<Header key="h1"/>,<Header key="h2" />,<Header key="h3"/>];
 		let a = this.a;
 		let b = this.b;
+		const title = "Welcome tyamap!";
 		return (
 			<div>
-				{headers}
+				<Header title={title} />
 				<h1>Welcome {this.name}!</h1>
 				<h2>It works!</h2>
 				<p>

@@ -5,12 +5,12 @@ export default class Title extends React.Component{
 		super();
 		// Reactコンポーネントが持つ状態データ。コンポーネントをどのようにレンダリングするかといった情報を格納する。
 		// setState()を通じて字変更されることで再レンダリングの命令がキューイングされて自動的にコンポーネントの再レンダリングがなされる。
-		this.state = {name :"tyamap"};
+		this.state = {name :"Welcome!!!"};
 	}
 
 	render(){
 		setTimeout(
-			() => {this.setState({name: "Welcome!"});}
+			() => {this.setState({name: "tyamap"});}
 			, 2000);
 		return(
 			<h1>{this.state.name}</h1>
