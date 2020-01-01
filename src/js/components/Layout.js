@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Body from "./Body";
 import Footer from "./Footer";
 
 export default class Layout extends React.Component {
@@ -23,15 +24,7 @@ export default class Layout extends React.Component {
 			<div>
 				<Header title={this.state.title} />
 				<Header title={"Thank you!"} />
-				<h1>Welcome {this.name}!</h1>
-				<h2>It works!</h2>
-				<p>
-				a = {a}, b = {b}<br/>
-				a + b =<br/> 
-				inline: {a + b}<br/>
-				function: {this.get_sum(a,b)}<br/>
-				anonymous: {((a,b) => {return a + b;})(a,b)}
-				</p>
+				<Body />
 				<Footer />
 			</div>
 		);
