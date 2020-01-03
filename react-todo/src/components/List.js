@@ -15,7 +15,7 @@ const List = (props) => (
 				return (
 					<li key={i} className= "siimple-list-item siimple--bg-white" style={style}>
 						{todo.title} 
-						<span className="siimple-tag siimple-tag--error siimple-hover" style={btn}>
+						<span className="siimple-tag siimple-tag--error siimple-hover" style={btn} onClick={() => props.handleRemove(i)}>
 							Delete
 						</span>
 					</li>

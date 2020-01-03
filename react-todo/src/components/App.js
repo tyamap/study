@@ -20,14 +20,22 @@ export default class App extends Component {
 		// inputのvalueを空に
 		e.target.title.value = '';
 	}
-	
+
+	// データ削除
+	handleRemove(i){
+		// todo配列のi番目から1つ目のデータを除外
+		this.state.todo.splice(i,1);
+		// setStateでtodo配列を上書き
+		this.setState({todo: this.state.todo});
+	} // bind(this)しないとエラー？
+
 	render() {
 		return (
 			<div className="siimple-box siimple--bg-dark">
 				<h1 className="siimple-box-title siimple--color-white">React Todo App</h1>
 				<Form handleAdd={this.handleAdd} />
 				<div className="siimple-rule"></div>
-				<List todos={this.state.todo}/>
+				<List todos={this.state.todo} handleRemove={this.handleRemove.bind(this)} />
 			</div>
 		);
 	}
