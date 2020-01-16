@@ -8,9 +8,9 @@
 ```
 |ID|Name|Skill|Real Name|  
 |-|:-:|:-|-:|  
-|001|SpiderMan|web-shoot|Peter Parker|  
-|002|IronMan|repulsor-ray|Tony Stark|  
-|003|AntMan|gigantic|Scott Lang|  
+|001|Spider-Man|web-shoot|Peter Parker|  
+|002|Iron-Man|repulsor-ray|Tony Stark|  
+|003|Ant-Man|gigantic|Scott Lang|  
 ```
 
 ### 結果
