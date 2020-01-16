@@ -6,8 +6,8 @@ ___行の前後を一行開けと、表示が崩れる場合がある。___
 ### 入力
 
 >
-\`\`\`javascript
-console.log('hello qiita!') 
+\`\`\`javascript  
+console.log('hello qiita!')   
 \`\`\`
 >
 
