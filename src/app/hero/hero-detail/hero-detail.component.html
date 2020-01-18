@@ -1,6 +1,26 @@
-<p>
-  hero-detail works!
-</p>
-<div class="button" routerLink="/heros">
-  一覧に戻る
+<div class="container">
+  <div class="title">ヒーロー詳細</div>
+  <div class="footer" class="hero-detail-container">
+    <div class="param-line">
+      <div class="label">ID</div>
+      <div class="value">{{ hero.id }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">名前</div>
+      <div class="value">{{ hero.name }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">スキル</div>
+      <div class="value">{{ hero.skill }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">説明</div>
+      <div class="value">{{ hero.description }}</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="button" routerLink="/heros">
+      一覧に戻る
+    </div>
+  </div>
 </div>
