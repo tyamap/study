@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-list.component.scss']
 })
 export class HeroListComponent implements OnInit {
+  id = '1';
 
   constructor() { }
 
