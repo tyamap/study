@@ -5,16 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero/hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
+import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // ngModelを認識するために、モジュールをインポート。
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
