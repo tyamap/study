@@ -1,0 +1,40 @@
+.container {
+  margin: auto;
+  padding: 32px 0;
+  width: 800px;
+  .title {
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .hero-list-container {
+    .hero-list-table {
+      border: 1px solid #d9dbde;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .hero-line {
+        display: flex;
+        padding: 16px 24px;
+
+        &.header {
+          background-color: #f5f5f5;
+        }
+
+        &:nth-child(n + 2) {
+          border-top: 1px solid #d9dbde;
+        }
+
+        .hero-id {
+          width: 40px;
+        }
+        .hero-name {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
