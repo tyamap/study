@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/shared/models/hero';
+import { HeroService } from 'src/app/shared/services/hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -9,10 +10,16 @@ import { Hero } from 'src/app/shared/models/hero';
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
 
-  constructor() { }
+  constructor(
+    private heroService: HeroService,
+  ) { }
 
+  // getメソッドのHeroを観測して、完了したら表示する。
   ngOnInit() {
-    this.hero = new Hero(1, 'スパイダーマン', 'web-shoot', 'あなたの親愛なる隣人、スパイディ！');
+    this.heroService.get(1).subscribe(
+      (hero: Hero) => {
+        this.hero = hero;
+      }
+    );
   }
-
 }

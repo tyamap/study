@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/shared/models/hero';
+import { HeroService } from 'src/app/shared/services/hero.service';
 
 @Component({
   selector: 'app-hero-list',
@@ -9,16 +10,17 @@ import { Hero } from 'src/app/shared/models/hero';
 export class HeroListComponent implements OnInit {
   heros: Hero[] = null;
 
-  constructor() { }
+  constructor(
+    // コンストラクターの引数でServiceを呼ぶことで、コンポーネントやサービスに注入できる。
+    private heroService: HeroService,
+    ) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.heros = [
-        new Hero(1, 'スパイダーマン', 'ウェブシュート', 'あなたの親愛なる隣人、スパイディ！'),
-        new Hero(2, 'アイアンマン', 'リパルサーレイ', '私が アイアンマンだ。'),
-        new Hero(3, 'キャプテン・アメリカ', 'シールドスラッシュ', 'いや、できるさ。僕はキャプテンだ！'),
-      ];
-    }, 3000);
+    // subscribeで対象のObservableを観測する。観測が完了すると、引数内の処理がコールバックされる。
+    this.heroService.list().subscribe(
+      (heros: Hero[]) => {
+        this.heros = heros;
+      }
+    );
   }
-
 }
