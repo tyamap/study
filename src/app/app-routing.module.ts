@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
+import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
+import { HeroListComponent } from './hero/hero-list/hero-list.component';
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent},
-  { path: 'products/:id', component: ProductDetailComponent},
-  { path: '', redirectTo: '/products', pathMatch: 'prefix'},
+  { path: 'heros', component: HeroListComponent},
+  { path: 'heros/:id', component: HeroDetailComponent},
+  { path: '', redirectTo: '/heros', pathMatch: 'prefix'},
 ];
 
 @NgModule({

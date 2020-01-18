@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { HeroListComponent } from './hero/hero-list/hero-list.component';
+import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ProductDetailComponent
+    HeroListComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
