@@ -10,12 +10,14 @@
         <label>名前</label>
         <div>
           <!-- required で入力必須バリデーションが利くようになる。 -->
+          <!-- カスタムバリデーターを適用。 -->
           <input
             id="name"
             type="text"
             formControlName="name"
             required
             maxlength="20"
+            appForbiddenWord="ぬるぽ"
           />
           <!--
             invalid 一つでもバリデーションに違反したらtrue

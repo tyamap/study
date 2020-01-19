@@ -7,13 +7,15 @@ import { HeroListComponent } from './hero/hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
 import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroListComponent,
     HeroDetailComponent,
-    HeroEditComponent
+    HeroEditComponent,
+    ForbiddenWordValidatorDirective,
   ],
   imports: [
     BrowserModule,

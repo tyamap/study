@@ -13,7 +13,7 @@ import { forbiddenWordValidator } from 'src/app/validators/forbidden-words';
 export class HeroEditComponent implements OnInit {
   heroForm = this.fb.group({
     id: [''],
-    name: ['', forbiddenWordValidator('ぬるぽ')],
+    name: [''],
     // バリデーションを定義（HTML側でも定義できるが、特にmaxlengthはブラウザによって仕様が異なるため）
     skill: ['', Validators.compose([Validators.maxLength(20), Validators.required])],
     description: [''],
