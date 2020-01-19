@@ -2,7 +2,7 @@
   <div class="title">ヒーローリスト</div>
   <div class="hero-list-container">
     <!-- *ngif で分岐条件を指定。'heloList'は下の<ng-template #heroList>に対応 -->
-    <div class="waiting-for-heros" *ngIf="heros === null; else heroList">
+    <div class="waiting-for-heroes" *ngIf="heroes === null; else heroList">
       一覧を取得しています......
     </div>
     <ng-template #heroList>
@@ -17,7 +17,7 @@
         <!-- マウスホバーのイベント情報を付与 -->
         <div
           class="hero-line"
-          *ngFor="let hero of heros"
+          *ngFor="let hero of heroes"
           (mouseenter)="hovered(hero)"
           (mouseleave)="unhovered(hero)"
         >

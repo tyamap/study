@@ -53,7 +53,7 @@ export class HeroEditComponent implements OnInit {
     if (this.heroForm.valid) {
       const {id, name, skill, description} = this.heroForm.getRawValue();
       this.heroService.update(new Hero(id, name, skill, description));
-      this.router.navigate(['/heros', this.heroForm.controls.id.value]);
+      this.router.navigate(['/heroes', this.heroForm.controls.id.value]);
     }
   }
 }

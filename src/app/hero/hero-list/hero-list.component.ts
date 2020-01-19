@@ -13,7 +13,7 @@ class HeroListElement extends Hero {
   styleUrls: ['./hero-list.component.scss']
 })
 export class HeroListComponent implements OnInit {
-  heros: HeroListElement[] = null;
+  heroes: HeroListElement[] = null;
 
   constructor(
     // コンストラクターの引数でServiceを呼ぶことで、コンポーネントやサービスに注入できる。
@@ -23,9 +23,9 @@ export class HeroListComponent implements OnInit {
   ngOnInit() {
     // subscribeで対象のObservableを観測する。観測が完了すると、引数内の処理がコールバックされる。
     this.heroService.list().subscribe(
-      (heros: Hero[]) => {
+      (heroes: Hero[]) => {
         // 配列内の各要素に対して処理をする、mapメソッドを利用。
-        this.heros = heros.map(
+        this.heroes = heroes.map(
           (hero: Hero) => {
             return{
               // ...はSpreadOpertater。heroに対して、hovered: false を追加しているという書き方
