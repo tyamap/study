@@ -27,6 +27,9 @@ export class HeroEditComponent implements OnInit {
     private heroService: HeroService,
   ) { }
 
+  // nameのgetter。get()メソッドでなく、name()として定義。
+  get name() { return this.heroForm.get('name'); }
+
   ngOnInit() {
     // paramsでRouteで設定しているパラメータを取得する。
     this.route.params.subscribe((params: Params) => {

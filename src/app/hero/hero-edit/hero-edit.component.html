@@ -8,7 +8,22 @@
       </div>
       <div class="edit-line">
         <label>名前</label>
-        <input type="text" formControlName="name" required />
+        <div>
+          <!-- required で入力必須バリデーションが利くようになる。 -->
+          <input id="name" type="text" formControlName="name" required />
+          <!--
+            invalid 一つでもバリデーションに違反したらtrue
+            dirty name要素が変更されたらtrue
+            touch name要素があるinputのblurイベント発火時にtrue
+            dirty と touched を入れないと、何もしてない状態からエラー分が表示されてしまう。
+            -->
+          <div
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert"
+          >
+            <div *ngIf="name.errors.required">入力してください。</div>
+          </div>
+        </div>
       </div>
       <div class="edit-line">
         <label>スキル</label>
