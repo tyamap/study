@@ -26,6 +26,7 @@ export class HeroService {
     return of(this.heros[id - 1]);
   }
 
+  // updateで与えられたheroと同じidを持つデータを探して、アップデート処理をする。
   update(hero: Hero): void {
     const index = this.heros.findIndex((hr: Hero) => hr.id === hero.id);
     this.heros[index] = hero;
