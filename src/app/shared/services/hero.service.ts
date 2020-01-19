@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../models/hero';
 import { Observable, of } from 'rxjs/index';
+import { HeroEditComponent } from 'src/app/hero/hero-edit/hero-edit.component';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,10 @@ export class HeroService {
   // idで指定されたHeroのObsavableを返す。
   get(id: number): Observable<Hero> {
     return of(this.heros[id - 1]);
+  }
+
+  update(hero: Hero): void {
+    const index = this.heros.findIndex((hr: Hero) => hr.id === hero.id);
+    this.heros[index] = hero;
   }
 }

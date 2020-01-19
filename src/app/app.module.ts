@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeroListComponent } from './hero/hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
 import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     // ngModelを認識するために、モジュールをインポート。
     FormsModule,
+    // ReactiveFormを認識するためのモジュール
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
