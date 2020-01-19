@@ -60,7 +60,10 @@
         [routerLink]="['/heros', heroForm.controls.id.value]"
         >キャンセル</span
       >
-      <button class="button black">保存</button>
+      <!-- ばろでーしょんクリアした場合のみボタンを有効化 -->
+      <button class="button black" [class.disabled]="heroForm.invalid">
+        保存
+      </button>
     </div>
   </form>
 </div>

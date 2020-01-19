@@ -47,8 +47,11 @@ export class HeroEditComponent implements OnInit {
 
   // Hero情報の取得
   saveHero(): void {
-    const {id, name, skill, description} = this.heroForm.getRawValue();
-    this.heroService.update(new Hero(id, name, skill, description));
-    this.router.navigate(['/heros', this.heroForm.controls.id.value]);
+    // バリデーションをクリアしたときのみ保存できる
+    if (this.heroForm.valid) {
+      const {id, name, skill, description} = this.heroForm.getRawValue();
+      this.heroService.update(new Hero(id, name, skill, description));
+      this.router.navigate(['/heros', this.heroForm.controls.id.value]);
+    }
   }
 }

@@ -36,6 +36,11 @@
         height: 40px;
         font-size: 14px;
       }
+
+      .alert {
+        margin-top: 8px;
+        color: red;
+      }
     }
   }
 
@@ -46,6 +51,12 @@
 
     .button {
       margin: 0 20px;
+
+      &.disabled {
+        // <- 追加
+        background-color: #b0bec5;
+        pointer-events: none;
+      }
     }
   }
 }
