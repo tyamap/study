@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/shared/models/hero';
 import { HeroService } from 'src/app/shared/services/hero.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-edit',
@@ -13,7 +13,8 @@ export class HeroEditComponent implements OnInit {
   heroForm = this.fb.group({
     id: [''],
     name: [''],
-    skill: [''],
+    // バリデーションを定義（HTML側でも定義できるが、特にmaxlengthはブラウザによって仕様が異なるため）
+    skill: ['', Validators.compose([Validators.maxLength(20), Validators.required])],
     description: [''],
   });
 

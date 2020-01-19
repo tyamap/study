@@ -36,8 +36,9 @@
       </div>
       <div class="edit-line">
         <label>スキル</label>
+        <!-- TypeSceipt側でValidationを定義。-->
         <div>
-          <input type="text" formControlName="skill" required maxlength="20" />
+          <input type="text" formControlName="skill" />
           <div
             *ngIf="skill.invalid && (skill.dirty || skill.touched)"
             class="alert"
