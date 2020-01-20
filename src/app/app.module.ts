@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
 import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
     FormsModule,
     // ReactiveFormを認識するためのモジュール
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
