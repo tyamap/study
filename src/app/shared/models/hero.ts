@@ -1,10 +1,10 @@
 export class Hero {
-  id: number;
+  id: string;
   name: string;
   skill: string;
   description: string;
 
-  constructor(id: number, name: string, skill: string, description: string) {
+  constructor(id: string, name: string, skill: string, description: string) {
     this.id = id;
     this.name = name;
     this.skill = skill;
