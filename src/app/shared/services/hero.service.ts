@@ -8,9 +8,9 @@ import { HeroEditComponent } from 'src/app/hero/hero-edit/hero-edit.component';
 })
 export class HeroService {
   heroes = [
-    new Hero(1, 'スパイダーマン', 'ウェブシュート', 'あなたの親愛なる隣人、スパイディ！'),
-    new Hero(2, 'アイアンマン', 'リパルサーレイ', '私が アイアンマンだ。'),
-    new Hero(3, 'キャプテン・アメリカ', 'シールドスラッシュ', 'いや、できるさ。僕はキャプテンだ！'),
+    new Hero('H00001', 'スパイダーマン', 'ウェブシュート', 'あなたの親愛なる隣人、スパイディ！'),
+    new Hero('H00002', 'アイアンマン', 'リパルサーレイ', '私が アイアンマンだ。'),
+    new Hero('H00003', 'キャプテン・アメリカ', 'シールドスラッシュ', 'いや、できるさ。僕はキャプテンだ！'),
   ];
 
   constructor() { }
