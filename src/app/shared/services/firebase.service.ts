@@ -14,7 +14,7 @@ export class FirebaseService {
       /**
        *
        *
-       *   firebaseの認証キー
+       *   firebaseのapiキー
        *
        *
        */
