@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="title">商品編集</div>
+  <div class="title">ヒーロー編集</div>
   <form (ngSubmit)="saveHero()" [formGroup]="heroForm">
     <div class="edit-form">
       <div class="edit-line">
@@ -64,7 +64,7 @@
         [routerLink]="['/heroes', heroForm.controls.id.value]"
         >キャンセル</span
       >
-      <!-- ばろでーしょんクリアした場合のみボタンを有効化 -->
+      <!-- バリデーションクリアした場合のみボタンを有効化 -->
       <button class="button black" [class.disabled]="heroForm.invalid">
         保存
       </button>
