@@ -1,11 +1,11 @@
 export class Hero {
-  id: string;
+  key: string;
   name: string;
   skill: string;
   description: string;
 
-  constructor(id: string, name: string, skill: string, description: string) {
-    this.id = id;
+  constructor(key: string, name: string, skill: string, description: string) {
+    this.key = key;
     this.name = name;
     this.skill = skill;
     this.description = description;

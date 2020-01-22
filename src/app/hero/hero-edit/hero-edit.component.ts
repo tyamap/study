@@ -12,7 +12,7 @@ import { forbiddenWordValidator } from 'src/app/validators/forbidden-words';
 })
 export class HeroEditComponent implements OnInit {
   heroForm = this.fb.group({
-    id: [''],
+    key: [''],
     name: [''],
     // バリデーションを定義（HTML側でも定義できるが、特にmaxlengthはブラウザによって仕様が異なるため）
     skill: ['', Validators.compose([Validators.maxLength(20), Validators.required])],
@@ -38,7 +38,7 @@ export class HeroEditComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.heroService.get(params.id).subscribe((hero: Hero) => {
         this.heroForm.setValue({
-          id: hero.id,
+          key: hero.key,
           name: hero.name,
           skill: hero.skill,
           description: hero.description,
@@ -51,8 +51,8 @@ export class HeroEditComponent implements OnInit {
   saveHero(): void {
     // バリデーションをクリアしたときのみ保存できる
     if (this.heroForm.valid) {
-      const {id, name, skill, description} = this.heroForm.getRawValue();
-      this.heroService.update(new Hero(id, name, skill, description));
+      const {key, name, skill, description} = this.heroForm.getRawValue();
+      this.heroService.update(new Hero(key, name, skill, description));
       this.router.navigate(['/heroes', this.heroForm.controls.id.value]);
     }
   }

@@ -8,7 +8,7 @@
     <ng-template #heroList>
       <div class="hero-list-table">
         <div class="hero-line header">
-          <div class="hero-id">ID</div>
+          <div class="hero-id">Key</div>
           <div class="hero-name">名前</div>
           <div class="hero-skill">スキル</div>
           <div class="operate">操作</div>
@@ -21,14 +21,14 @@
           (mouseenter)="hovered(hero)"
           (mouseleave)="unhovered(hero)"
         >
-          <div class="hero-id">{{ hero.id }}</div>
+          <div class="hero-id">{{ hero.key }}</div>
           <div class="hero-name">{{ hero.name }}</div>
           <div class="hero-skill">{{ hero.skill }}</div>
           <!-- マウスホバー時に操作ボタンを表示 -->
           <div class="operate">
             <span *ngIf="!hero.hovered; else Unhovered"></span>
             <ng-template #Unhovered
-              ><span class="button white" [routerLink]="hero.id"
+              ><span class="button white" [routerLink]="hero.key"
                 >詳細</span
               ></ng-template
             >
