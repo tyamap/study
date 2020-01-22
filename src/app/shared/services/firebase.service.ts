@@ -6,7 +6,7 @@ import UserCredential = firebase.auth.UserCredential;
   providedIn: 'root'
 })
 export class FirebaseService {
-  EMAIL = 'examp;e@example.com';
+  EMAIL = 'example@example.com';
   PASSWORD = 'password';
 
   constructor() {
@@ -20,17 +20,17 @@ export class FirebaseService {
       appId: '1:385562054185:web:b3ebf092b0e075456b9638'
     };
     firebase.initializeApp(config);
-    this.signInOrCreateUser(this.EMAIL, this.PASSWORD);
+    // this.signInOrCreateUser(this.EMAIL, this.PASSWORD);
   }
 
-  // firebase未登録なら登録処理。登録済みならログイン処理
-  signInOrCreateUser(email: string, password: string): void {
-    firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
-      console.log(userCredential.user.uid);
-    }).catch(() => {
-      firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
-        console.log(userCredential.user.uid);
-      });
-    });
-  }
+  // // firebase未登録なら登録処理。登録済みならログイン処理
+  // signInOrCreateUser(email: string, password: string): void {
+  //   firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
+  //     console.log(userCredential.user.uid);
+  //   }).catch(() => {
+  //     firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential: UserCredential) => {
+  //       console.log(userCredential.user.uid);
+  //     });
+  //   });
+  // }
 }
