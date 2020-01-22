@@ -9,6 +9,7 @@ import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroNewComponent } from './hero/hero-new/hero-new.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     HeroEditComponent,
     ForbiddenWordValidatorDirective,
+    HeroNewComponent,
   ],
   imports: [
     BrowserModule,
