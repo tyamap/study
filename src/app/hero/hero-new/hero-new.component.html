@@ -46,13 +46,9 @@
       </div>
     </div>
     <div class="footer">
-      <span
-        class="button white"
-        [routerLink]="['/heroes', heroForm.controls.id.value]"
-        >キャンセル</span
-      >
+      <span class="button white" routerLink="/heroes">キャンセル</span>
       <button class="button black" [class.disabled]="heroForm.invalid">
-        保存
+        作成
       </button>
     </div>
   </form>
