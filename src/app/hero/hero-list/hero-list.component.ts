@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/shared/models/hero';
 import { HeroService } from 'src/app/shared/services/hero.service';
-// import { FirebaseService } from 'src/app/shared/services/firebase.service';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 
 // ホバー情報を保持するための拡張クラス
 class HeroListElement extends Hero {
@@ -20,7 +20,7 @@ export class HeroListComponent implements OnInit {
     // コンストラクターの引数でServiceを呼ぶことで、コンポーネントやサービスに注入できる。
     private heroService: HeroService,
     // firebase認証サービスの準備
-//    private firebaseService: FirebaseService,
+    private firebaseService: FirebaseService,
     ) { }
 
   ngOnInit() {

@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class HeroService {
   BASE_URL = 'https://hello-heroes.firebaseio.com';
-  heroes = [];
+  UID = 'uid';
 
   heroes = [new Hero('', '', '', '')];
 
@@ -43,7 +43,7 @@ export class HeroService {
     this.heroes[index] = hero;
   }
 
-  // ヒーロー作成
+  // ヒーロー作成。作成したHeroのKeyにresoponse.name（データキー）を格納する。
   create(hero: Hero): Observable<void> { // <= 追加
     return this.http.post(`${this.BASE_URL}/users/${this.UID}/heroes.json`, hero).pipe(
       map((response: any) => hero.key = response.name),

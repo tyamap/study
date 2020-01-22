@@ -21,7 +21,11 @@
           (mouseenter)="hovered(hero)"
           (mouseleave)="unhovered(hero)"
         >
-          <div class="hero-id">{{ hero.key }}</div>
+          <!-- 特に意味もなく、Keyの7文字目を表示 -->
+          <div class="hero-id">
+            {{ hero.key.charAt(7)
+            }}<!-- 特に意味もなく、Keyの7文字目を表示 -->
+          </div>
           <div class="hero-name">{{ hero.name }}</div>
           <div class="hero-skill">{{ hero.skill }}</div>
           <!-- マウスホバー時に操作ボタンを表示 -->
