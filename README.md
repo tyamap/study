@@ -1,5 +1,8 @@
 # Hello Heroes!
 
+Angular の学習用プロジェクト。
+github web でデプロイするまでが目標。
+
 ## what's this?
 
 自分のヒーローを作って投稿できるサイトです。
