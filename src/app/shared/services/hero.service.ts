@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../models/hero';
 import { Observable, of } from 'rxjs/index';
-import { HeroEditComponent } from 'src/app/hero/hero-edit/hero-edit.component';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 

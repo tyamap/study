@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   // 匿名ユーザーをグーグル認証でアップグレード
-  async upgradeAnonumouswithGoogle() {
+  async upgradeAnonymouosWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.angularFireAuth.auth.currentUser.linkWithPopup(provider);
   }
