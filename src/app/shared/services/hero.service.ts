@@ -11,6 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class HeroService {
   BASE_URL = 'https://hello-heroes.firebaseio.com';
   uid: string;
+  TOKEN: string;
 
   heroes = [new Hero('', '', '', '')];
 
@@ -18,14 +19,17 @@ export class HeroService {
     private http: HttpClient,
     private angularFireAuth: AngularFireAuth,
   ) {
-    this.angularFireAuth.authState.subscribe(u => this.uid = u.uid);
+    this.angularFireAuth.authState.subscribe(u => u.getIdToken().then((token) => {
+      this.TOKEN = token;
+      this.uid = u.uid;
+    }));
   }
 
   // RxJSを利用した非同期処理。
   // ObservableはRxJSのクラス。Hero配列をObservableなものとして返す。
   // firebaseのRTDBからjsonファイルを読み込み、リスト。
   list(): Observable<Hero[]> {
-    return this.http.get(`${this.BASE_URL}/users/${this.uid}/heroes.json`).pipe(
+    return this.http.get(`${this.BASE_URL}/users/${this.uid}/heroes.json`, { params: { auth: this.TOKEN } }).pipe(
       map((response: any) =>
         Object.keys(response).map((key: string) => {
           const hr = response[key];

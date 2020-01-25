@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthGuard } from './shared/guard/auth.guard';
 import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
 import { LoginFirebaseUIComponent } from './login-firebase-ui/login-firebase-ui.component';
 import { TopPageComponent } from './top-page/top-page.component';
@@ -73,7 +74,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,      // AngularfireのAuth用モジュール
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),　// FirebaseUIのモジュール
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
