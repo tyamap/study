@@ -48,9 +48,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   tosUrl: 'aaa',
   privacyPolicyUrl: 'プライバシーポリシーのURL',
-  signInSuccessUrl: 'https://google.com',
+  signInSuccessUrl: 'http://localhost:4200/',
   credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
-  siteName: 'my-app',
+  siteName: 'hello-heroes',
 };
 
 @NgModule({
