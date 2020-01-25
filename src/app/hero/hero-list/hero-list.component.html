@@ -21,7 +21,6 @@
           (mouseenter)="hovered(hero)"
           (mouseleave)="unhovered(hero)"
         >
-          <!-- 特に意味もなく、Keyの7文字目を表示 -->
           <div class="hero-id">
             {{ hero.key.charAt(7)
             }}<!-- 特に意味もなく、Keyの7文字目を表示 -->
@@ -39,11 +38,11 @@
           </div>
         </div>
       </div>
-      <div class="footer">
-        <button class="button black" routerLink="/heroes/new">
-          ヒーローを追加
-        </button>
-      </div>
     </ng-template>
+    <div class="footer">
+      <button class="button black" routerLink="/heroes/new">
+        ヒーローを追加
+      </button>
+    </div>
   </div>
 </div>

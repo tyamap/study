@@ -22,7 +22,7 @@ export class HeroDetailComponent implements OnInit {
     // paramsでRouteで設定しているパラメータを取得する。
     this.route.params.subscribe(
       (params: Params) => {
-        this.heroService.get(params.id).subscribe(
+        this.heroService.get(params.key).subscribe(
           (hero: Hero) => {
             this.hero = hero;
           }

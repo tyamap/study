@@ -36,7 +36,7 @@ export class HeroEditComponent implements OnInit {
   ngOnInit() {
     // paramsでRouteで設定しているパラメータを取得する。
     this.route.params.subscribe((params: Params) => {
-      this.heroService.get(params.id).subscribe((hero: Hero) => {
+      this.heroService.get(params.key).subscribe((hero: Hero) => {
         this.heroForm.setValue({
           key: hero.key,
           name: hero.name,

@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroNewComponent } from './hero/hero-new/hero-new.component';
-import { LoginComponent } from './login/login.component';
 
 import { environment } from '../environments/environment';
 
@@ -61,7 +60,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HeroEditComponent,
     ForbiddenWordValidatorDirective,
     HeroNewComponent,
-    LoginComponent,
     LoginFirebaseUIComponent,
     TopPageComponent,
   ],

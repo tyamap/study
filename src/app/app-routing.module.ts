@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'top', component: TopPageComponent },
   { path: 'heroes', component: HeroListComponent},
   { path: 'heroes/new', component: HeroNewComponent },
-  { path: 'heroes/:id', component: HeroDetailComponent},
-  { path: 'heroes/:id/edit', component: HeroEditComponent},
+  { path: 'heroes/:key', component: HeroDetailComponent},
+  { path: 'heroes/:key/edit', component: HeroEditComponent},
   { path: '', redirectTo: '/heroes', pathMatch: 'prefix'},
 ];
 

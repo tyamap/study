@@ -18,8 +18,7 @@ export class HeroListComponent implements OnInit {
   constructor(
     // コンストラクターの引数でServiceを呼ぶことで、コンポーネントやサービスに注入できる。
     private heroService: HeroService,
-    // firebase認証サービスの準備
-  ) { }
+   ) { }
 
   ngOnInit() {
     // subscribeで対象のObservableを観測する。観測が完了すると、引数内の処理がコールバックされる。
