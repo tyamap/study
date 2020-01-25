@@ -1,7 +1,7 @@
 # Hello Heroes!
 
 Angular の学習用プロジェクト。
-github web でデプロイするまでが目標。
+ログイン機能と簡単な CRUD、github web でデプロイするまでが目標。
 
 ## what's this?
 
