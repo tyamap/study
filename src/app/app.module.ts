@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
 import { LoginFirebaseUIComponent } from './login-firebase-ui/login-firebase-ui.component';
+import { TopPageComponent } from './top-page/top-page.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   autoUpgradeAnonymousUsers: false, // 匿名認証ユーザー自動アップグレード
@@ -62,6 +63,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HeroNewComponent,
     LoginComponent,
     LoginFirebaseUIComponent,
+    TopPageComponent,
   ],
   imports: [
     BrowserModule,
