@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
-import { HeroListComponent } from './hero/hero-list/hero-list.component';
-import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
-import { HeroNewComponent } from './hero/hero-new/hero-new.component';
-import { TopPageComponent } from './top-page/top-page.component';
+import { HeroDetailComponent } from './pages/hero/hero-detail/hero-detail.component';
+import { HeroListComponent } from './pages/hero/hero-list/hero-list.component';
+import { HeroEditComponent } from './pages/hero/hero-edit/hero-edit.component';
+import { HeroNewComponent } from './pages/hero/hero-new/hero-new.component';
+import { TopPageComponent } from './pages/top-page/top-page.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [

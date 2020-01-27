@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroListComponent } from './hero/hero-list/hero-list.component';
-import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
-import { HeroEditComponent } from './hero/hero-edit/hero-edit.component';
+import { HeroListComponent } from './pages/hero/hero-list/hero-list.component';
+import { HeroDetailComponent } from './pages/hero/hero-detail/hero-detail.component';
+import { HeroEditComponent } from './pages/hero/hero-edit/hero-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenWordValidatorDirective } from './validators/forbidden-words';
 import { HttpClientModule } from '@angular/common/http';
-import { HeroNewComponent } from './hero/hero-new/hero-new.component';
+import { HeroNewComponent } from './pages/hero/hero-new/hero-new.component';
 
 import { environment } from '../environments/environment';
 
@@ -17,8 +17,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
-import { LoginFirebaseUIComponent } from './login-firebase-ui/login-firebase-ui.component';
-import { TopPageComponent } from './top-page/top-page.component';
+import { LoginFirebaseUIComponent } from './pages/login-firebase-ui/login-firebase-ui.component';
+import { TopPageComponent } from './pages/top-page/top-page.component';
+import { UserInfoComponent } from './pages/user-info/user-info.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   autoUpgradeAnonymousUsers: false, // 匿名認証ユーザー自動アップグレード
@@ -63,6 +64,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HeroNewComponent,
     LoginFirebaseUIComponent,
     TopPageComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,

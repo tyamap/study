@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { HeroService } from '../../shared/services/hero.service';
+import { HeroService } from '../../../shared/services/hero.service';
 import { Hero } from 'src/app/shared/models/hero';
 
 @Component({
