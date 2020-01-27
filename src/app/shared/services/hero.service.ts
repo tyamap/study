@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs/index';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class HeroService {
   constructor(
     private http: HttpClient,
     private angularFireAuth: AngularFireAuth,
+    private angularFireRtdb: AngularFireDatabase,
   ) {
     this.angularFireAuth.authState.subscribe(u => u.getIdToken().then((token) => {
       this.TOKEN = token;
@@ -37,6 +39,10 @@ export class HeroService {
         })
       )
     );
+  }
+
+  listMyHeroes(userId: string) {
+    return this.angularFireRtdb.object(`users/${userId}`).valueChanges();
   }
 
   // idで指定されたHeroのObsavableを返す。
