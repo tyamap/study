@@ -1,18 +1,17 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>レベル別グラフ</h1>
+    <Chart></Chart>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Chart from './LevelsChart';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    Chart,
+  },
 }
 </script>
 
@@ -24,5 +23,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+div {
+  margin: 0 10%;
+  width: 80%;
+  height: 80%;
 }
 </style>
