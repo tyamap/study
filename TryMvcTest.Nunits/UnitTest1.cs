@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using Store.Models;
+using System;
 
 namespace TryMvcTest.Nunits
 {
@@ -16,6 +18,20 @@ namespace TryMvcTest.Nunits
         public void FailTestMethod()
         {
             Assert.IsTrue(false);
+        }
+
+        // private メソッドのテスト
+        [Test]
+        public void TestPrivateMethod_GetTaxIncluded()
+        {
+            // テスト対象のインスタンス
+            Product product = new Product(1, "Laptop", 100000);
+            
+            var param = 1.08 ;
+            // PrivateInvoke
+            var actPrice = CommonModule.PrivateMethodInvoke(product, "GetTaxIncluded", new Object[] { param });
+
+            Assert.AreEqual(108000, actPrice);
         }
     }
 }
