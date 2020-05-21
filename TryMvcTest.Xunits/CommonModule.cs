@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 using System.Reflection;
 
 internal static class CommonModule
@@ -6,12 +6,12 @@ internal static class CommonModule
     static public object PrivateMethodInvoke(object testClass, string methodName, object[] parameters)
     {
         if (string.IsNullOrWhiteSpace(methodName))
-            Assert.Fail("No Name");
+            Assert.True(false, "No Name");
 
         MethodInfo method = testClass.GetType().GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
 
         if (method == null)
-            Assert.Fail(string.Format("{0} is not found", methodName));
+            Assert.True(false, string.Format("{0} is not found", methodName));
 
         try
         {

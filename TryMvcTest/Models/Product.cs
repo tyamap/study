@@ -28,6 +28,11 @@ namespace Store.Models
             // デシリアライズ用
         }
 
+        public string GetInfo()
+        {
+            return $"Name: {Name}, Price: {Price}";
+        }
+
         // private メソッド
         private int GetTaxIncluded(double tax)
         {

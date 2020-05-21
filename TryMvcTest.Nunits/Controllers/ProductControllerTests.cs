@@ -1,49 +1,39 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using Store.Models;
 using System.Web.Mvc;
 
-namespace Store.Controllers.Tests
+namespace Store.Controllers.Nunit
 {
-    [TestClass]
+    [TestFixture]
     public class ProductControllerTest
     {
-        [TestMethod]
+        private ProductController _controller = new ProductController();
+
+        [Test]
         public void TestDetailsView()
         {
-            var controller = new ProductController();
-            var result = controller.Details(2) as ViewResult;
-            Assert.AreEqual("Details", result.ViewName);
-        }
+            var result = _controller.Details(2) as ViewResult;
 
-        // 失敗するテスト
-        [TestMethod]
-        [Ignore]
-        public void FailTestDetailsView()
-        {
-            var controller = new ProductController();
-            var result = controller.Details(2) as ViewResult;
-            Assert.AreEqual(expected: "Index", actual: result.ViewName);
+            Assert.That(result.ViewName, Is.EqualTo("Details"));
         }
 
         // ViewDateのテスト
-        [TestMethod]
+        [Test]
         public void TestDetailsViewData()
         {
-            var controller = new ProductController();
-            var result = controller.Details(2) as ViewResult;
-
+            var result = _controller.Details(2) as ViewResult;
             var product = (Product)result.ViewData.Model;
 
-            Assert.AreEqual("Laptop", product.Name);
+            Assert.That(product.Name, Is.EqualTo("Laptop"));
         }
 
         // Controller アクションのテスト
-        [TestMethod]
+        [Test]
         public void TestDetailsRedirect()
         {
-            var controller = new ProductController();
-            var result = (RedirectToRouteResult)controller.Details(-1);
-            Assert.AreEqual("Index", result.RouteValues["action"]);
+            var result = (RedirectToRouteResult)_controller.Details(-1);
+
+            Assert.That(result.RouteValues["action"], Is.EqualTo("Index"));
         }
     }
 }

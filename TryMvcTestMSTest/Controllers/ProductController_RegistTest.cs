@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Store.Controllers;
 using Store.Models;
 using System.Web.Mvc;
 using System.Text.Json;
+using System;
 
-namespace TryMvcTestMSTest.Controllers
+namespace Store.Controllers.Tests
 {
     [TestClass]
     public class ProductController_RegistTest
@@ -23,7 +23,7 @@ namespace TryMvcTestMSTest.Controllers
             var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
 
             Assert.IsTrue(response.Success);
-            Assert.AreEqual(response.Message, message);
+            Assert.AreEqual(message, response.Message);
         }
 
         [TestCategory("登録機能 バリデーションエラー")]
@@ -38,19 +38,37 @@ namespace TryMvcTestMSTest.Controllers
             var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
 
             Assert.IsFalse(response.Success);
-            Assert.AreEqual(response.Message, message);
+            Assert.AreEqual(message, response.Message);
         }
 
         [TestCategory("登録機能 予期せぬ動作")]
         [TestMethod]
         [ExpectedException(typeof(JsonException))]
-        public void TestRegistIllegal()
+        public void TestRegistIllegal1()
         {
             // 不正なJSONデータが送信された場合
-            var jsonString = "{'foo': 'bar'}";
-            var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
+            var jsonString = "";
+            _controller.Regist(jsonString);
+        }
 
-            Assert.IsFalse(response.Success);
+        [TestCategory("登録機能 予期せぬ動作")]
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void TestRegistIllegal2()
+        {
+            // デシリアライズ可能だがメンバーに割りあてられない
+            var jsonString = @"{""foo"":""bar""}";
+            _controller.Regist(jsonString);
+        }
+
+        [TestCategory("登録機能 予期せぬ動作")]
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestRegistIllegal3()
+        {
+            // 引数Null
+            string jsonString = null;
+            _controller.Regist(jsonString);
         }
     }
 }

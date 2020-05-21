@@ -1,15 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
-namespace Store.Models.Tests
+namespace Store.Models.Nunit
 {
-    [TestClass()]
+    [TestFixture]
     public class ProductTests
     {
         // テスト対象のインスタンス
         private Product _product = new Product(1, "Laptop", 100000);
 
         // public メソッドのテスト
-        [TestMethod]
+        [Test]
         public void TestForPublic()
         {
             var info = _product.GetInfo();
@@ -18,13 +18,12 @@ namespace Store.Models.Tests
         }
 
         // private メソッドのテスト
-        [TestMethod]
+        [Test]
         public void TestForPrivate()
         {
-            // PrivateObjectを作成
-            var privateObject = new PrivateObject(_product);
-            // invoke で private メソッド呼び出し
-            var actPrice = (int)privateObject.Invoke("GetTaxIncluded", 1.08);
+            var param = 1.08;
+            // PrivateInvoke
+            var actPrice = CommonModule.PrivateMethodInvoke(_product, "GetTaxIncluded", new object[] { param });
 
             Assert.AreEqual(108000, actPrice);
         }

@@ -59,8 +59,6 @@ namespace Store.Controllers
             }
             catch (Exception e)
             {
-                response.Success = false;
-                response.Message = e.Message;
                 throw e;
             }
         }

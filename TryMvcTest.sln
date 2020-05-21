@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMvcTest", "TryMvcTest\TryMvcTest.csproj", "{55B71C20-39F1-4185-BA65-111F2585D054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMvcTestMSTest", "TryMvcTestMSTest\TryMvcTestMSTest.csproj", "{4CFEBED7-4FCB-4FFC-B211-AAC1DE03C662}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryMvcTest.MSTest", "TryMvcTestMSTest\TryMvcTest.MSTest.csproj", "{4CFEBED7-4FCB-4FFC-B211-AAC1DE03C662}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FD1879BD-BEAF-465D-85F1-52A16EE0F941}"
 	ProjectSection(SolutionItems) = preProject

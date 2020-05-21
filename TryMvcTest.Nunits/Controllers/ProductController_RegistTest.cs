@@ -1,56 +1,54 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Store.Controllers;
+﻿using NUnit.Framework;
 using Store.Models;
 using System.Web.Mvc;
 using System.Text.Json;
+using System;
 
-namespace TryMvcTestMSTest.Controllers
+namespace Store.Controllers.Nunit
 {
-    [TestClass]
+    [TestFixture]
     public class ProductController_RegistTest
     {
         ProductController _controller = new ProductController();
 
-        [TestCategory("登録機能 正常登録")]
-        [TestMethod]
-        [DataRow("Laptop", 100000, Constant.Regist.SUCCESS)]
-        [DataRow("Television", 200000, Constant.Regist.SUCCESS)]
-        [DataRow("", 0, Constant.Regist.SUCCESS)]
-        public void TestRegist(string name, int price, string message)
+        [Category("登録機能 正常登録")]
+        [Test, Sequential]
+        public void TestRegist([Values("Laptop", "Television", "")] string pName,
+                               [Values(100000, 200000, 0)] int pPrice)
         {
-            var product = new Product(name, price);
+            var product = new Product(pName, pPrice);
             var jsonString = JsonSerializer.Serialize(product);
             var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
 
-            Assert.IsTrue(response.Success);
-            Assert.AreEqual(response.Message, message);
+            Assert.That(response.Success, Is.True);
+            Assert.That(response.Message, Is.EqualTo(Constant.Regist.SUCCESS));
         }
 
-        [TestCategory("登録機能 バリデーションエラー")]
-        [TestMethod]
-        [DataRow("LongLongName", 1000, Constant.Regist.NAME_ERROR)]
-        [DataRow("Laptop", -1000, Constant.Regist.PRICE_ERROR)]
-        [DataRow("LongLongName", -1000, Constant.Regist.NAME_ERROR)]
-        public void TestRegistError(string name, int price, string message)
+        [Category("登録機能 バリデーションエラー")]
+        [Test, Sequential]
+        public void TestRegistError([Values("LongLongName", "Laptop", "LongLongName")] string pName,
+                                    [Values(1000, -1000, -1000)] int pPrice,
+                                    [Values(Constant.Regist.NAME_ERROR, 
+                                            Constant.Regist.PRICE_ERROR, 
+                                            Constant.Regist.NAME_ERROR)] string ExpMsg)
         {
-            var product = new Product(name, price);
+            var product = new Product(pName, pPrice);
             var jsonString = JsonSerializer.Serialize(product);
             var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
 
-            Assert.IsFalse(response.Success);
-            Assert.AreEqual(response.Message, message);
+            Assert.That(response.Success, Is.False);
+            Assert.That(response.Message, Is.EqualTo(ExpMsg));
         }
 
-        [TestCategory("登録機能 予期せぬ動作")]
-        [TestMethod]
-        [ExpectedException(typeof(JsonException))]
-        public void TestRegistIllegal()
+        [Category("登録機能 予期せぬ動作")]
+        [Test, Sequential]
+        public void TestRegistIllegal([Values("", @"{""foo"":""bar""}", null)] string pJson,
+                                      [Values(typeof(JsonException), 
+                                              typeof(NullReferenceException), 
+                                              typeof(ArgumentNullException))] Type exp)
         {
-            // 不正なJSONデータが送信された場合
-            var jsonString = "{'foo': 'bar'}";
-            var response = ((JsonResult)_controller.Regist(jsonString)).Data as Response;
-
-            Assert.IsFalse(response.Success);
+            Assert.That(() => { _controller.Regist(pJson); },
+                        Throws.TypeOf(exp));
         }
     }
 }
