@@ -17,6 +17,17 @@ namespace Store.Models
             this.Price = price;
         }
 
+        public Product(string name, int price)
+        {
+            this.Name = name;
+            this.Price = price;
+        }
+
+        public Product()
+        {
+            // デシリアライズ用
+        }
+
         // private メソッド
         private int GetTaxIncluded(double tax)
         {

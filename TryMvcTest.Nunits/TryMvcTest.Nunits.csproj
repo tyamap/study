@@ -54,6 +54,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ProductControllerTests.cs" />
+    <Compile Include="Controllers\ProductController_RegistTest.cs" />
     <Compile Include="ForAttributes.cs" />
     <Compile Include="ForPrivate.cs" />
     <Compile Include="CommonModule.cs" />
