@@ -38,8 +38,11 @@ namespace TryMvcTest.Nunits
         public void TwoTimeStringExceptionTest([Values("", " ", "0.00004", null)] string prm1)
         {
             ForPrivate forPrivate = new ForPrivate();
-            Assert.Throws<InvalidCastException>(() => 
-                CommonModule.PrivateMethodInvoke(forPrivate, "TwoTimeString", new object[] { prm1 }));
+            Assert.That(() =>
+            {
+                CommonModule.PrivateMethodInvoke(forPrivate, "TwoTimeString", new object[] { prm1 });
+            }, 
+            Throws.TypeOf<InvalidCastException>());
         }
     }
 }
