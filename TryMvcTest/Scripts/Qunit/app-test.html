@@ -8,10 +8,19 @@
 </head>
 <body>
   <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
+
+  <div id="qunit-fixture">
+    <!-- テストで使用するDOM要素 -->
+    <div id="box1">box1要素のテキスト</div>
+    <div id="box2">box2要素のテキスト</div>
+    <div id="box3">box3要素のテキスト</div>
+  </div>
+  
   <script src="qunit-2.10.0.js"></script>
 
-  <!-- ここより下でテスト対象ファイルとテストファイルを読み込む -->
+  <!-- jQueryを用いる -->
+  <script src="../jquery-3.3.1.js"></script>
+
   <script src="../src/app.js"></script>
   <script src="app-test.js"></script>
 </body>
