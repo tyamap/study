@@ -11,5 +11,10 @@
 	<%= new java.util.Date() %>
 	<br>
 	<%= request.getAttribute("foo") %>
+
+	<form method="post" action="./HelloServlet">
+		入力: <input type="text" name="hoge">
+		<button type="submit">送信</button>
+	</form>
 </body>
 </html>
