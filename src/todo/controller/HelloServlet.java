@@ -28,7 +28,11 @@ public class HelloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// JSPにデータを渡す
+		request.setAttribute("title", "Hello, World!");
+		request.setAttribute("foo", "hoge");
+
+		// JSPにforward
 		String view = "/WEB-INF/view/index.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 
