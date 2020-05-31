@@ -1,8 +1,8 @@
 package tyamap.example;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -19,9 +19,10 @@ public class MyDataEntityServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // EntityManagerを作成するFactoryクラス
-    protected EntityManagerFactory factory = 
+    protected EntityManagerFactory factory =
         Persistence.createEntityManagerFactory("mydataentity-persistance");
 
+    // データベースにエンティティを保存する処理
     @Override
     public void init() throws ServletException {
         super.init();
@@ -50,12 +51,16 @@ public class MyDataEntityServlet extends HttpServlet {
         }
     }
 
+    // indexページでエンティティを取得
     @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
+        // エンティティマネージャの用意
         EntityManager manager = factory.createEntityManager();
+        // Queryインスタンスを作成してクエリの作成
         Query query = manager.createQuery("select i from MyDataEntity i");
+        // クエリを使用してリストを取得
         List list = query.getResultList();
 
         request.setAttribute("list", list);
