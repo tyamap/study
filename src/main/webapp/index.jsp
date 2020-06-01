@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="tyamap.example.MyDataEntity" %>
 <%
     request.setCharacterEncoding("utf-8");
     List list = (List)request.getAttribute("list");
@@ -16,7 +15,9 @@
 <h1>Hello World!</h1>
 <p><%= new java.util.Date() %></p>
 <ul>
-    <li><%= list.size() %></li>
+    <% for (Object entity : list) { %>
+        <li><%= entity %></li>
+    <% } %>
 </ul>
 </body>
 </html>
