@@ -1,7 +1,6 @@
 package com.tyamap.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,12 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.tyamap.domain.Employee;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import com.tyamap.domain.Department;
-import com.tyamap.util.*;
+import com.tyamap.domain.Employee;
+import com.tyamap.util.HibernateUtil;
 
-import org.hibernate.*;
-
+@WebServlet("/")
 public class MyDataEntityServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -58,7 +59,7 @@ public class MyDataEntityServlet extends HttpServlet {
 
         request.setAttribute("list", resultList);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/index.jsp");
         dispatcher.forward(request,response);
     }
 }
