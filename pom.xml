@@ -20,7 +20,7 @@
 
 	<dependencies>
 
-    <!-- TODO: サーブレット -->
+    <!-- サーブレット -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
@@ -49,17 +49,19 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
     <finalName>JavaeeApp</finalName>
     <plugins>
 
     <!-- jetty plugin -->
-      <plugin>
+    <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jetty.version}</version>
-      </plugin>
+	</plugin>
 
     </plugins>
-  </build>
+	</build>
+
 </project>
