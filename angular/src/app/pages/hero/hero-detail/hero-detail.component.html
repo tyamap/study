@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="title">ヒーロー詳細</div>
+  <div class="hero-detail-container">
+    <div class="param-line">
+      <div class="label">ID</div>
+      <div class="value">{{ hero.key }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">名前</div>
+      <div class="value">{{ hero.name }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">スキル</div>
+      <div class="value">{{ hero.skill }}</div>
+    </div>
+    <div class="param-line">
+      <div class="label">説明</div>
+      <div class="value">{{ hero.description }}</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="button white" routerLink="/heroes">
+      一覧に戻る
+    </div>
+    <div class="button black" routerLink="edit">
+      編集
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="title">ヒーローリスト</div>
+  <div class="hero-list-container">
+    <!-- *ngif で分岐条件を指定。'heloList'は下の<ng-template #heroList>に対応 -->
+    <div class="waiting-for-heroes" *ngIf="heroes === null; else heroList">
+      一覧を取得しています......
+    </div>
+    <ng-template #heroList>
+      <div class="hero-list-table">
+        <div class="hero-line header">
+          <div class="hero-id">Key</div>
+          <div class="hero-name">名前</div>
+          <div class="hero-skill">スキル</div>
+          <div class="operate">操作</div>
+        </div>
+        <!-- *ngFor でループ処理。'let hoge of fuga'でfugaの要素をﾋﾄﾂﾋﾄﾂhogeに代入 -->
+        <!-- マウスホバーのイベント情報を付与 -->
+        <div
+          class="hero-line"
+          *ngFor="let hero of heroes"
+          (mouseenter)="hovered(hero)"
+          (mouseleave)="unhovered(hero)"
+        >
+          <div class="hero-id">
+            {{ hero.key.charAt(7)
+            }}<!-- 特に意味もなく、Keyの7文字目を表示 -->
+          </div>
+          <div class="hero-name">{{ hero.name }}</div>
+          <div class="hero-skill">{{ hero.skill }}</div>
+          <!-- マウスホバー時に操作ボタンを表示 -->
+          <div class="operate">
+            <span *ngIf="!hero.hovered; else Unhovered"></span>
+            <ng-template #Unhovered
+              ><span class="button white" [routerLink]="hero.key"
+                >詳細</span
+              ></ng-template
+            >
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div class="footer">
+      <button class="button black" routerLink="/heroes/new">
+        ヒーローを追加
+      </button>
+    </div>
+  </div>
+</div>
