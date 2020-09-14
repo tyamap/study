@@ -10,23 +10,20 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <div id="app">
-    <h1 :class="classObj">Hello</h1>
-    <button @click="isActive = !isActive">変更</button>
+    <h1 :style="[styleObj, baseObj]">Hello</h1>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        isActive: true
-      },
-      computed: {
-        classObj: function(){
-          return {
-            red: this.isActive,
-            'bg-blue': !this.isActive
-          }
+        styleObj: {
+          color: 'red',
+          backgroundColor: 'blue'
+        },
+        baseObj: {
+          fontSize: '60px'
         }
-      }
+      },
     })
   </script>
 </body>
