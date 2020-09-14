@@ -20,6 +20,7 @@
         counter: 0,
       },
       computed: {
+        // 依存関係に基づきキャッシュされる
         lessThanThree: function(){
           return this.counter > 3 ? '3より上' : '3以下'
         }
