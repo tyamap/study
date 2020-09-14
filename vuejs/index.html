@@ -7,10 +7,11 @@
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <div id="app">
     <p>現在{{number}}回クリック</p>
     <button v-on:click="countUp">カウントアップ</button>
-    <p v-on:mousemove="changeMousePosition">マウスを載せてください</p>
+    <p v-on:mousemove="changeMousePosition(2, $event)">マウスを載せてください</p>
     <p>X:{{x}},Y:{{y}}</p>
   </div>
   <script>
@@ -25,10 +26,10 @@
         countUp: function(){
           this.number += 1
         },
-        changeMousePosition(event){
+        changeMousePosition(dn,event){
           // 引数にeventを指定することでイベントオブジェクトが取得できる
-          this.x = event.clientX;
-          this.y = event.clientY;
+          this.x = event.clientX / dn;
+          this.y = event.clientY / dn;
         }
       }
     })
