@@ -9,14 +9,20 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <div id="app">
     <p>{{message}}</p>
-    <a :href="url">Google</p>
+    <a :[attribute]="url">Google</a>
+    <a v-bind="twitterObj">Twitter</a>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
         message: 'HelloWorld!',
-        url: 'https://google.com'
+        url: 'https://google.com',
+        attribute: 'href',
+        twitterObj: {
+          href: 'https://twitter.com',
+          id: 27
+        }
       },
       methods: {
         sayHi: function(){
