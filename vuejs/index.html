@@ -9,19 +9,17 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <div id="app">
     <p>{{message}}</p>
-    <button v-on:click="reverseMessage">反転</button>
+    <p>{{number + 5}}</p>
+    <p>{{ok ? 'Yes' : 'No'}}</p>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        message: 'HelloWorld!'
+        message: 'HelloWorld!',
+        number: 3,
+        ok: true,
       },
-      methods:{
-        reverseMessage: function(){
-          this.message = this.message.split('').reverse().join('')
-        }
-      }
     })
   </script>
 </body>
