@@ -8,26 +8,18 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <div id="app">
-    <p>{{message}}</p>
-    <a :[attribute]="url">Google</a>
-    <a v-bind="twitterObj">Twitter</a>
+    <p>現在{{number}}回クリック</p>
+    <button v-on:click="countUp">カウントアップ</button>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        message: 'HelloWorld!',
-        url: 'https://google.com',
-        attribute: 'href',
-        twitterObj: {
-          href: 'https://twitter.com',
-          id: 27
-        }
+        number: 0,
       },
       methods: {
-        sayHi: function(){
-          this.message = 'Hello VueJS'
-          return 'Hi'
+        countUp: function(){
+          this.number += 1
         }
       }
     })
