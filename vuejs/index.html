@@ -10,34 +10,19 @@
 
   <div id="app">
     <p>現在{{number}}回クリック</p>
-    <button v-on:click="countUp">カウントアップ</button>
-    <p v-on:mousemove="changeMousePosition(2, $event)">マウスを載せてください
-      <span v-on:mousemove.stop>反応させない</span>
-    </p>
-    <a v-on:click.prevent href="https://google.com">Google</a>
-    <p>X:{{x}},Y:{{y}}</p>
-    <input type="text" v-on:keyup.space="myAlert" />
+    <button @[event]="countUp">カウントアップ</button>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
         number: 0,
-        x: 0,
-        y: 0,
+        event: 'click'
       },
       methods: {
         countUp: function(){
-          this.number += 1
+          this.number += 1;
         },
-        changeMousePosition(dn,event){
-          // 引数にeventを指定することでイベントオブジェクトが取得できる
-          this.x = event.clientX / dn;
-          this.y = event.clientY / dn;
-        },
-        myAlert(){
-          alert('alert')
-        }
       }
     })
   </script>
