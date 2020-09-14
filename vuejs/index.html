@@ -8,7 +8,7 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <div id="app">
-    <p>{{message}}</p>
+    <p v-once>{{message}}</p>
     <p>{{sayHi()}}</p>
   </div>
   <script>
@@ -19,7 +19,8 @@
       },
       methods: {
         sayHi: function(){
-          return this.message
+          this.message = 'Hello VueJS'
+          return 'Hi'
         }
       }
     })
