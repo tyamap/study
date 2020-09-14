@@ -16,6 +16,7 @@
     </p>
     <a v-on:click.prevent href="https://google.com">Google</a>
     <p>X:{{x}},Y:{{y}}</p>
+    <input type="text" v-on:keyup.space="myAlert" />
   </div>
   <script>
     new Vue({
@@ -33,6 +34,9 @@
           // 引数にeventを指定することでイベントオブジェクトが取得できる
           this.x = event.clientX / dn;
           this.y = event.clientY / dn;
+        },
+        myAlert(){
+          alert('alert')
         }
       }
     })
