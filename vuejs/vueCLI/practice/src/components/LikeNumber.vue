@@ -1,7 +1,6 @@
 <template>
   <div>
-  <p>いいね({{ number }})</p>
-    <LikeNumber></LikeNumber>
+    <p>いいね({{ number }})</p>
   </div>
 </template>
 
@@ -14,6 +13,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
