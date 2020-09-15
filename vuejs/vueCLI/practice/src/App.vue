@@ -1,19 +1,17 @@
 <template>
   <div>
-  <p>いいね({{ number }})</p>
+    <LikeHeader></LikeHeader>
     <LikeNumber></LikeNumber>
   </div>
 </template>
 
 <script>
-export default {
-  data: () => {
-    return {
-      number: 0
-    };
+import LikeHeader from './components/LikeHeader.vue'
+
+export default{
+  // コンポーネントのローカル登録
+  components: {
+    LikeHeader
   }
 }
 </script>
-
-<style>
-</style>
