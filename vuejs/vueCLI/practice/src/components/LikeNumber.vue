@@ -8,7 +8,12 @@
 <script>
 export default {
   props: {
-    number: Number
+    number: {
+      // propsのバリデーション
+      type: Number,
+      required: true,
+      // default: 10,
+    }
   },
   methods: {
     increment(){
