@@ -12,12 +12,20 @@
     <ul>
       <li v-for="(f, i) in fruits">{{i}}:{{f}}</li>
     </ul>
+    <ul>
+      <li v-for="(value, key, i) in obj">{{i}}:{{key}}={{value}}</li>
+    </ul>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        fruits: ['りんご', 'ばなな', 'ぶどう']
+        fruits: ['りんご', 'ばなな', 'ぶどう'],
+        obj: {
+          firstName: '太郎',
+          lastName: '田中',
+          age: 21
+        }
       },
     })
   </script>
