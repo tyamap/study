@@ -10,10 +10,10 @@
 
   <div id="app">
     <ul>
-      <template v-for="(f, i) in fruits">
+      <div v-for="(f, i) in fruits" :key="f">
         <li>{{i}}:{{f}}</li>
         <hr>
-      </template>
+      </div>
     </ul>
   </div>
   <script>
