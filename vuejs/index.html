@@ -9,19 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <div id="app">
-    <button @click="ok = !ok">変更</button>
-    <!-- 要素自体がなくなる -->
-    <!-- 頻繁に切り替える際に重くなる -->
-    <p v-if="ok">IF</p>
-    <!-- スタイル属性 display=none がつく -->
-    <!-- 初期実行時に時間がかかる -->
-    <p v-show="ok">SHOW</p>
+    <ul>
+      <li v-for="f in fruits">{{f}}</li>
+    </ul>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        ok: true
+        fruits: ['りんご', 'ばなな', 'ぶどう']
       },
     })
   </script>
