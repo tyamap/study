@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>いいね({{ number / 2 }})</p>
+    <p>いいね({{ number }})</p>
     <button @click="increment">+1</button>
   </div>
 </template>
@@ -12,12 +12,10 @@ export default {
       // propsのバリデーション
       type: Number,
       required: true,
-      // default: 10,
     }
   },
   methods: {
     increment(){
-      this.$emit("my-click", this.number + 1)
     }
   }
 }
