@@ -7,7 +7,9 @@
     <LikeNumber :number="number"></LikeNumber>
     <button @click="currentComponent = 'Home'">Home</button>
     <button @click="currentComponent = 'About'">About</button>
-    <component :is="currentComponent"></component>
+    <keep-alive><!-- 動的コンポーネント切り替え時にdestroy()を発火させない -->
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
