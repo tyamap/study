@@ -3,22 +3,16 @@
     <p v-border:solid.shadow.round="{width: '5px', color: 'red'}">Home</p>
     <h2>{{ title | upperCase}}</h2>
     <p>{{ subTitle | lowerCase }}</p>
+    <CountNumber></CountNumber>
   </div>
 </template>
 
 <script>
+import CountNumber from './CountNumber.vue'
+import {tokyoTitle} from "@/tokyoTitle";
+
 export default {
-  data(){
-    return{
-      title: 'Welcome to Tokyo',
-      subTitle: 'Tokyo is beautiful city'
-    }
-  },
-  filters: {
-    lowerCase(value){
-      return value.toLowerCase();
-    }
-  },
+  mixins: [tokyoTitle],
   directives: {
     border (el, binding) {
       el.style.border = 'solid black 2px'; // DOM要素に対する操作
@@ -32,6 +26,9 @@ export default {
         el.style.boxShadow = '0.2px 5px rgba(0, 0, 0, 0.26)';
       }
     }
+  },
+  components:{
+    CountNumber
   }
 }
 </script>
