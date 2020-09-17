@@ -6,6 +6,11 @@ Vue.config.productionTip = false
 // コンポーネントのグローバル登録
 Vue.component('LikeNumber', LikeNumber)
 
+// フィルター
+Vue.filter("upperCase", function (value) {
+  return value.toUpperCase();
+})
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')

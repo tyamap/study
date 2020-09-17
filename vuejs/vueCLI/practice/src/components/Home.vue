@@ -1,11 +1,19 @@
 <template>
   <div>
-    <p v-border:solid.shadow.round="{width: '10px', color: 'red'}">Home</p>
+    <p v-border:solid.shadow.round="{width: '5px', color: 'red'}">Home</p>
+    <h2>{{ title | upperCase}}</h2>
+    <p>{{ subTitle | upperCase }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      title: 'Welcome to Tokyo',
+      subTitle: 'Tokyo is beautiful city'
+    }
+  },
   directives: {
     border (el, binding) {
       el.style.border = 'solid black 2px'; // DOM要素に対する操作
