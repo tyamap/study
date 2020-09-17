@@ -7,22 +7,11 @@ Vue.config.productionTip = false
 Vue.component('LikeNumber', LikeNumber)
 
 // カスタムディレクティブ v-border
-Vue.directive("border", {
-  bind(el, binding, vnode) {
-    // ディレクティブが初めて対象の要素に紐づいた時
-  },
-  inserted(el, binding, vnode) {
-    // 親Nodeに挿入された時
-  },
-  update(el, binding, vnode, oldVnode) {
-    // コンポーねんとが更新されるたび。子コンポーネントが更新される前
-  },
-  componentUpdated(el, binding, vnode, oldVnode) {
-    // コンポーねんとが更新されるたび。子コンポーネントが更新された後
-  },
-  unbind(el, binding, vnode) {
-    // ディレクティブが紐づいている要素から取り除かれた時
-  }
+Vue.directive("border", function (el, binding) {
+  // bindとupdateフックに適用される
+  el.style.border = 'solid black 2px'; // DOM要素に対する操作
+  el.style.borderWidth = binding.value.width; // 引数を受け取る
+  el.style.borderColor = binding.value.color;
 })
 
 new Vue({
