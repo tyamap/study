@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue'
-import Users from './views/Users.vue'
-import User from './views/User.vue'
-import UserPosts from './views/UserPosts.vue'
-import UserProfile from './views/UserProfile.vue'
+const Users = () => import(/* webpackChunkName: "User" */ "./views/Users.vue");
+const User = () => import(/* webpackChunkName: "User" */ "./views/User.vue");
+const UserPosts = () => import(/* webpackChunkName: "User" */ "./views/UserPosts.vue");
+const UserProfile = () => import(/* webpackChunkName: "User" */ "./views/UserProfile.vue");
 
 Vue.use(Router)
 
