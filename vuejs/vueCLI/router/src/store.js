@@ -8,6 +8,7 @@ export default new Vuex.Store({
     count: 3
   },
   getters: {
+    getCount: state => state.count,
     doubleCount: state => state.count * 2,
     tripleCount: state => state.count * 3,
   },

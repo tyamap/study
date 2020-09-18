@@ -13,10 +13,7 @@ import { mapGetters } from "vuex";
 
 export default {
   computed:{
-    count(){
-      return this.$store.state.count
-    },
-    ...mapGetters(["doubleCount", "tripleCount"])
+    ...mapGetters(["getCount", "doubleCount", "tripleCount"])
   },
   methods:{
     toUsers(){
