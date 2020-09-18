@@ -18,7 +18,8 @@
       <router-link
         :to="{
           name: 'users-id-profile',
-          params: {id}
+          params: {id},
+          query: {lang: 'ja', page: 1}
         }" 
         class="link"
       >profile</router-link>
