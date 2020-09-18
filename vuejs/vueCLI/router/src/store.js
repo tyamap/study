@@ -20,7 +20,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    // 技同期処理を行う
+    // 非同期処理を行う
     increment(context, number) {
       context.commit("increment", number);
     },
