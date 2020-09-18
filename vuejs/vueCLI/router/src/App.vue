@@ -13,19 +13,23 @@
         active-class="link--active"
         exact
         >Users</router-link>
-    <button @click="increment(1)">+1</button>
-    <button @click="decrement(1)">-1</button>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
     </nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
 
 export default {
   methods:{
-    ...mapMutations(["increment", "decrement"])
+    increment(){
+      this.$store.dispatch("increment", 1)
+    },
+    decrement(){
+      this.$store.dispatch("decrement", 1)
+    }
   }
 }
 </script>
