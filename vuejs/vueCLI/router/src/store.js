@@ -5,12 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    count: 3
+    count: 3,
+    message: "HELLO!",
   },
   getters: {
     getCount: state => state.count,
     doubleCount: state => state.count * 2,
     tripleCount: state => state.count * 3,
+    getMessage: state => state.message,
   },
   mutations: {
     increment(state, number) {
@@ -18,7 +20,10 @@ export default new Vuex.Store({
     },
     decrement(state, number) {
       state.count -= number;
-    }
+    },
+    updateMessage(state, newMessage) {
+      state.message = newMessage;
+    },
   },
   actions: {
     // 非同期処理を行う
@@ -27,6 +32,9 @@ export default new Vuex.Store({
     },
     decrement(context, number) {
       context.commit("decrement", number);
-    }
+    },
+    updateMessage({ commit }, newMessage) {
+      commit("updateMessage", newMessage);
+    },
   }
 });
