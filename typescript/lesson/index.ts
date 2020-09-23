@@ -59,7 +59,6 @@ function sayHello(): void{
 
 // undefind型
 let tmp: undefined;
-tmp = null;
 
 const anotherAdd: (n1: number, n2: number) => number = add;
 // アロー関数
