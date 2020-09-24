@@ -43,9 +43,9 @@ class Teacher extends Person {
   }
 
   static getInstance() {
-    if (this.instance) return this.instance;
-    this.instance = new Teacher('Green', 28, 'English');
-    return this.instance;
+    if (Teacher.instance) return Teacher.instance;
+    Teacher.instance = new Teacher('Green', 28, 'English');
+    return Teacher.instance;
   }
 }
 const green = Teacher.getInstance();
