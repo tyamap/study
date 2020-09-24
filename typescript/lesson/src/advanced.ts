@@ -58,3 +58,21 @@ function havePet(pet: Pet) {
     pet.fly();
   }
 }
+
+interface DownloadedData {
+  id: number;
+  user?: {
+    name?: {
+      first: string;
+      last: string;
+    }
+  }
+}
+const downloadedData: DownloadedData = {
+  id: 1
+}
+// OptionalChaining
+console.log(downloadedData.user?.name?.first)
+// NullishCoalescing
+const userData = downloadedData.user ?? 'no-user'
+console.log(userData);
