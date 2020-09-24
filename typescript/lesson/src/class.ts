@@ -14,8 +14,21 @@ console.log(tommy);
 console.log(tommy.greeting());
 
 class Teacher extends Person {
-  constructor(name: string, age: number, public subject: string) {
+  constructor(name: string, age: number, private subject: string) {
     super(name, age);
+  }
+  get _subject() {
+    if (!this.subject){
+      throw new Error('There is no subject.');  
+    }
+    return this.subject;
+  }
+
+  set _subject(value) {
+    if (!value){
+      throw new Error('There is no subject.');  
+    }
+    this.subject = value;
   }
 
   greeting() {
