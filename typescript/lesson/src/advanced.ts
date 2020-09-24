@@ -17,11 +17,13 @@ const quill: EngineerBlogger = {
  *  Typeガード 
  */
 // typeof で絞り込み
+function toUpperCase(x: string): string;
+function toUpperCase(x: number): number;
 function toUpperCase(x: string | number) {
   if (typeof x === 'string') {
     return x.toUpperCase();
   }
-  return '';
+  return x;
 }
 // in 演算子で絞り込み
 type NomadWorker = Engineer | Blogger;
